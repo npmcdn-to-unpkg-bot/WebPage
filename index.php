@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/angular-material.min.css"></link>
   <link rel="stylesheet" href="css/app.css">
   
-  <title>wave-gotik-treffen</title>
+  <title>Flogsta Engine</title>
 
 </head>
 <!--<body ng-app="flogstaEngine">-->

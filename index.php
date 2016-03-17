@@ -12,8 +12,8 @@
 </head>
 <!--<body ng-app="flogstaEngine">-->
 <body>
-     Hello Flogsta engine...
-     This is so kewl!
+     <b>Hello Flogsta engine...</b>
+     <b>This is so kewl!</b>
      Just checking if this works, okay?
 <!-- jQuery imports-->
 <script type="js/deps/jQuery/1.12.1/jquery.js"></script>

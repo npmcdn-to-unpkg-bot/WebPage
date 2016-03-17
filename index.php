@@ -11,8 +11,9 @@
 
 </head>
 <!--<body ng-app="flogstaEngine">-->
-<body> Hello Flogsta engine...
-
+<body>
+     Hello Flogsta engine...
+     This is so kewl!
 <!-- jQuery imports-->
 <script type="js/deps/jQuery/1.12.1/jquery.js"></script>
 

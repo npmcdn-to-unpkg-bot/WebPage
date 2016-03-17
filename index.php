@@ -14,6 +14,7 @@
 <body>
      Hello Flogsta engine...
      This is so kewl!
+     Just checking if this works, okay?
 <!-- jQuery imports-->
 <script type="js/deps/jQuery/1.12.1/jquery.js"></script>
 

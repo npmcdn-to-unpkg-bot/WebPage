@@ -1,7 +1,2 @@
 # Flogsta Engine Webbpage
-This is the source code for the Flogsta Engine webbpage.
-To start the app, just write:
-
-```
-npm start
-```
+This is the source code for the Flogsta Engine webbpage. Developed with Angular2 and ngMaterial2. 

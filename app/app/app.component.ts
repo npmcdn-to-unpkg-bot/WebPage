@@ -6,6 +6,7 @@ import {MdMenu} from 'app/menu/menu.component';
 import {FeNavBarComponent} from 'app/fe-nav-bar/fe-nav-bar.component';
 import {AboutComponent} from 'app/about/about.component';
 import {ShaderComponent} from 'app/shaders/shaders.component';
+import {GalleryComponent} from 'app/gallery/gallery.component';
 
 
 @Component({
@@ -17,6 +18,7 @@ import {ShaderComponent} from 'app/shaders/shaders.component';
 
 @RouteConfig([
     {path:'/shaders', name: 'Shaders', component: ShaderComponent},
+    {path:'/gallery', name: 'Gallery', component: GalleryComponent},
     {path:'/about', name: 'About', component: AboutComponent,  useAsDefault: true}
 ])
 

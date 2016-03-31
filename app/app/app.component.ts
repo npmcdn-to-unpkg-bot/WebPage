@@ -5,6 +5,7 @@ import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from "ng2-material/all";
 import {FeNavBarComponent} from 'app/fe-nav-bar/fe-nav-bar.component';
 import {AboutComponent} from 'app/about/about.component';
 import {ShaderComponent} from 'app/shaders/shaders.component';
+import {GalleryComponent} from 'app/gallery/gallery.component';
 
 @Component({
     selector: 'flogsta-engine',
@@ -15,6 +16,7 @@ import {ShaderComponent} from 'app/shaders/shaders.component';
 
 @RouteConfig([
     {path:'/shaders', name: 'Shaders', component: ShaderComponent},
+    {path:'/gallery', name: 'Gallery', component: GalleryComponent},
     {path:'/about', name: 'About', component: AboutComponent,  useAsDefault: true}
 ])
 

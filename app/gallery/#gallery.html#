@@ -1,6 +1,0 @@
-<div flex layout="row">
-<md-content flex layout="column">
-<img src="{{photographer.img" />
-
-</md-content>
-</div>

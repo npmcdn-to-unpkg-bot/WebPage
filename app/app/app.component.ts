@@ -2,15 +2,17 @@ import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from "ng2-material/all";
 
+import {MdMenu} from 'app/menu/menu.component';
 import {FeNavBarComponent} from 'app/fe-nav-bar/fe-nav-bar.component';
 import {AboutComponent} from 'app/about/about.component';
 import {ShaderComponent} from 'app/shaders/shaders.component';
+
 
 @Component({
     selector: 'flogsta-engine',
     templateUrl: 'app/app/app.html',
     styleUrls: ['app/app/app.css'],
-    directives: [FeNavBarComponent, ROUTER_DIRECTIVES]
+    directives: [FeNavBarComponent, MdMenu, ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
@@ -29,4 +31,3 @@ export class AppComponent {
 	console.log("clocked menu");
     }
 }
-

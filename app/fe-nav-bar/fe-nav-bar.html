@@ -5,16 +5,24 @@
     </button>
 
     <a md-button [routerLink]="['About']">About</a>
-    <a md-button [routerLink]="['About']">Setup</a>
-    <a md-button [routerLink]="['About']">Examples</a>
-    <a md-button [routerLink]="['Shaders']">Shaders</a>
 
-<md-menu>
-        <button md-button> UserDrop </button>
-        <md-menu-content>
-          <button md-button >LogOut</button>
-          <button md-button >Projects</button>
-        </md-menu-content>
- </md-menu>    
+    <md-menu>
+      <button md-button> Tutorials </button>
+      <md-menu-content>
+	<a md-button [routerLink]="['About']">Part 1, setup</a>
+	<a md-button [routerLink]="['About']">Part 2, first shader</a>
+	<a md-button [routerLink]="['About']">Part 3, advanced</a>
+
+      </md-menu-content>
+    </md-menu>    
+
+    <md-menu>
+      <button md-button> Code </button>
+      <md-menu-content>
+	<a md-button [routerLink]="['Setup']">Setup</a>
+	<a md-button [routerLink]="['Shaders']">Shaders</a>
+	<a md-button [routerLink]="['Shaders']">Examples</a>
+      </md-menu-content>
+    </md-menu>    
   </div>
 </md-toolbar>

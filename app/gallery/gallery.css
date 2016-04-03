@@ -6,8 +6,8 @@ img.galleryPhoto {
 img.galleryPhoto:hover {
     height: 100%;
     width: 100%;
-    background-size: cover;
-    position: relative;
+    background-size: auto;
+    position: static;
 }
 
 md-card.galleryPhoto{
@@ -26,14 +26,12 @@ md-card.galleryPhoto:hover {
     display: none; /* Hidden by default */
     /* position: fixed; /* Stay in place */
     
-    position: absolute;
-    margin-top:-100px;
-    top: 0;
-    left: 5%;
+    position: fixed;
+    margin-top:150px;
+    top: -15%;
+    left: 0%;
     
     z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -49,23 +47,33 @@ md-card.galleryPhoto:hover {
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top: -100px; opacity: 0}
-    to {top: 0; opacity: 1}
+    to {top: 400; opacity: 1}
 }
 
 @keyframes animatetop {
     from {top: -100px; opacity: 0}
-    to {top: 0; opacity: 1}
+    to {top: 400; opacity: 1}
+}
+
+@-webkit-keyframes animatebot {
+    from {top: 400px; opacity: 1}
+    to {top: -100; opacity: 0}
+}
+
+@keyframes animatebot {
+    from {top: 400px; opacity: 1}
+    to {top: -100; opacity: 0}
 }
 
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 40px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
 
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: -300 400px 400px 0 rgba(0,0,0,0.2),0 10px 30px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
@@ -79,6 +87,12 @@ md-card.galleryPhoto:hover {
     font-size: 28px;
     font-weight: bold;
     transition: all 0.4s ease-in-out;
+
+    box-shadow: -300 400px 400px 0 rgba(0,0,0,0.2),0 10px 30px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatebot;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatebot;
+    animation-duration: 0.4s
 }
 
 .close:hover,

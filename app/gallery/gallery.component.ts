@@ -28,17 +28,12 @@ export class GalleryComponent {
 	if (event.which == 27) {
 	    this.closeModal({target:'modal'});
 	} else if (event.which == 37) {
-	    console.log("nect img");
 	    this.prevImg();
 	} else if (event.which == 39) {
 	    this.nextImg();
 	}
     }
-    
-    eventHandler(event){
-	console.log("pressed a key: " + event);
-    }
-    
+        
     openModal(currImg) {
 	this.currentImg = currImg;
 	var numb : number = currImg.match(/\d/g).join("");

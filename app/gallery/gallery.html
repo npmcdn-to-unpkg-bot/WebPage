@@ -1,9 +1,26 @@
-<div flex layout="row">
-<md-content flex layout="column">
-  <div class='md-padding' layout="row" layout-wrap style="opacity: 0.9;margin:auto;" >
-    <md-card class="galleryPhoto" *ngFor="#img of photos">
-      <img  src="{{img}}" class="galleryPhoto">
-    </md-card>
+<div>
+  <md-content flex layout="column">
+    <div class='md-padding' layout="row" layout-wrap style="opacity: 0.9;margin:auto;" >
+      <md-card class="galleryPhoto" *ngFor="#img of photos">
+	<img  id="{{img}}" src="{{img}}" (click)="openModal(img)" class="galleryPhoto">
+      </md-card>
+    </div>
+  </md-content>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <md-card> 
+      <div>
+	<button md-button  (click)="prevImg()">Prev</button>
+	<button md-button (click)="nextImg()">Next</button>
+      </div>
+     <img src="{{currentImg}}">
+     </md-card>
+
   </div>
-</md-content>
+
 </div>

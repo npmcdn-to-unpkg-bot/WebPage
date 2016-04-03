@@ -25,6 +25,7 @@
     <script src="deps/angular2/bundles/router.dev.js"></script>  
     <script src="deps/angular2/bundles/angular2.dev.js"></script>
 
+    <script src="https://rawgit.com/shlomiassaf/angular2-modal/master/dist/systemjs/angular2-modal-0.0.5.js"></script>
     <script>
       System.config({
         transpiler: 'typescript', 
@@ -32,7 +33,7 @@
           packages: {       
           app: {
               defaultExtension: 'ts'
-          }
+          },
         }
       });
       System.import('app/main')

@@ -1,0 +1,20 @@
+img.galleryPhoto {
+    height: 100%;
+    width: 100%;
+}
+
+img.galleryPhoto:hover {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+}
+
+md-card.galleryPhoto{
+    width: 100px;
+    height: 100px;
+}
+md-card.galleryPhoto:hover {
+    width: 200px;
+    height: 200px;
+}

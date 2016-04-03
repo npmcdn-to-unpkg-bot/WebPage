@@ -9,5 +9,3 @@ export var PHOTOGRAPHERS : Photographer[] = [
      github: 'https://github.com/menuan',
      img: 'assets/img/sb.jpg'}
 ];
-
-console.log(PHOTOGRAPHERS);

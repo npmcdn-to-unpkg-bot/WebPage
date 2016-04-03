@@ -11,11 +11,9 @@ import {GalleryService} from './gallery.service';
 export class GalleryComponent {
     public title = "Gallery";
     public photographers = this._galleryService.getPhotographers();
-
+    public photos = this._galleryService.getPhotos();
     constructor(private _galleryService: GalleryService) { /* Constructor for service */
-	console.log("launched gallery site hello");
-	console.log("screenwidth: " + screen.width);
-    
+	console.log("launched gallery site hello, screenwidth: " + screen.width);    
     }
 }
 

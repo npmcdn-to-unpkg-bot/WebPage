@@ -24,9 +24,8 @@ export class GalleryComponent {
 
     openModal(currImg) {
 	this.currentImg = currImg;
-	var numb = currImg.match(/\d/g);
-	numb = numb.join("");
-	this.currentImgIndex = numb;
+	var numb = currImg.match(/\d/g).join("");
+	this.currentImgIndex = parseInt(numb);
 	console.log("index: " + numb);
 	var modal = document.getElementById('myModal');
 	modal.style.display = "block";
@@ -51,6 +50,7 @@ export class GalleryComponent {
 	} else {
 	    this.currentImgIndex = this.currentImgIndex + 1;
 	}
+	console.log("what: " + this.currentImgIndex);
 	this.currentImg = this.photos[this.currentImgIndex];
     }
 

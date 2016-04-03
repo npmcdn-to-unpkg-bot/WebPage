@@ -1,6 +1,5 @@
 import {bootstrap}    from 'angular2/platform/browser';
 import {AppComponent} from './app/app.component';
-//import {ROUTER_PROVIDERS,RouteConfig} from 'angular2/router';
 import {
   APP_BASE_HREF
   ROUTER_DIRECTIVES,

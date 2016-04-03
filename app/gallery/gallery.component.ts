@@ -24,12 +24,13 @@ export class GalleryComponent {
     }
 
     keydown(event) {
-	console.log("keydown: " + event.which);
+	console.log(event.which);
 	if (event.which == 27) {
 	    this.closeModal({target:'modal'});
 	} else if (event.which == 37) {
+	    console.log("nect img");
 	    this.prevImg();
-	} else if (event.which = 39) {
+	} else if (event.which == 39) {
 	    this.nextImg();
 	}
     }

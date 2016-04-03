@@ -1,1 +1,1 @@
-CREATE DATABSE gallery;
+CREATE DATABASE gallery;

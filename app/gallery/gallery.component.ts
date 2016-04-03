@@ -19,6 +19,7 @@ export class GalleryComponent {
     public photos = this._galleryService.getPhotos();
     public currentImg = null;
     public currentImgIndex : number = 0;
+    public currentAuthor : number = 0; 
     constructor(private _galleryService: GalleryService) {
 	console.log("launched gallery site hello, screenwidth: " + screen.width);
     }
@@ -38,6 +39,7 @@ export class GalleryComponent {
 	this.currentImg = currImg;
 	var numb : number = currImg.match(/\d/g).join("");
 	this.currentImgIndex = +numb;
+	this.currentAuthor = this.photos[this.currentImgIndex].author;
 	var modal = document.getElementById('myModal');
 	modal.style.display = "block";
     }
@@ -59,7 +61,8 @@ export class GalleryComponent {
 	} else {
 	    this.currentImgIndex = this.currentImgIndex + 1;
 	}
-	this.currentImg = this.photos[this.currentImgIndex];
+	this.currentImg = this.photos[this.currentImgIndex].img;
+	this.currentAuthor = this.photos[this.currentImgIndex].author;
     }
 
     prevImg() {
@@ -68,7 +71,8 @@ export class GalleryComponent {
 	} else {
 	    this.currentImgIndex = this.currentImgIndex - 1;
 	}
-	this.currentImg = this.photos[this.currentImgIndex];
+	this.currentImg = this.photos[this.currentImgIndex].img;
+	this.currentAuthor = this.photos[this.currentImgIndex].author;
     }
 }
 

@@ -2,7 +2,7 @@
   <md-content flex layout="column">
     <div class='md-padding' layout="row" layout-wrap style="opacity: 0.9;margin:auto;" >
       <md-card class="galleryPhoto" *ngFor="#img of photos">
-	<img id="{{img}}" src="{{img}}" (click)="openModal(img)" class="galleryPhoto">
+	<img id="{{img.img}}" src="{{img.img}}" (click)="openModal(img.img)" class="galleryPhoto">
       </md-card>
     </div>
   </md-content>
@@ -19,6 +19,7 @@
 	<button md-button (click)="nextImg()">Next</button>
       </div>
       <img src="{{currentImg}}">
+      Photographed by: {{currentAuthor}}
     </md-card>
 
   </div>

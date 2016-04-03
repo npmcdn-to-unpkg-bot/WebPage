@@ -7,8 +7,9 @@ export class GalleryService {
 	var photos = [];
 	var numberOfPhotos = 29;
 	for(var i = 0; i < numberOfPhotos; i = i + 1) {
-	    photos.push("assets/img/gallery/test/" + i + ".jpg")
+	    photos.push({img:"assets/img/gallery/test/" + i + ".jpg", author: "None"});
 	}
+	console.log(photos);
 	return photos;
     }
 

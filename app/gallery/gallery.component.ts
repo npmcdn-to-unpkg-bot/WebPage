@@ -1,24 +1,22 @@
 import {Component} from 'angular2/core';
+import {GalleryService} from './gallery.service';
 
 @Component({
     selector: 'gallery',
     templateUrl: 'app/gallery/gallery.html',
     styleUrls: ['app/gallery/gallery.css'],
+    providers: [GalleryService]
 })
 
 export class GalleryComponent {
     public title = "Gallery";
-    public photographers = PHOTOGRAPHERS;
-    
-    constructor() {
-	console.log("launched gallery site");
-	console.log("screenwidth: " + screen.width);
-    }
-}
+    public photographers = this._galleryService.getPhotographers();
 
-interface Photographer {
-    year: number;
-    name: string;
+    constructor(private _galleryService: GalleryService) { /* Constructor for service */
+	console.log("launched gallery site hello");
+	console.log("screenwidth: " + screen.width);
+    
+    }
 }
 
 interface Photograph {
@@ -27,8 +25,3 @@ interface Photograph {
     location: string;
 }
 
-var PHOTOGRAPHERS : Photographer[] = {born : 1992, name : 'Simon Bergström',
-				      about: 'It\'s a me, Simon!',
-				      github: 'https://github.com/menuan',
-				      img: 'assets/img/sb.jpg'}
-];

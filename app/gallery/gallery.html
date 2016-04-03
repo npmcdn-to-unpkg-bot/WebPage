@@ -1,5 +1,7 @@
 <div flex layout="row">
 <md-content flex layout="column">
-
+  <ul>
+    <li *ngFor="#grapher of photographers"> {{grapher.about}}, {{grapher.github}} </li>
+  </ul>
 </md-content>
 </div>

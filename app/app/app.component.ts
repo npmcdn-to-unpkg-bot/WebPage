@@ -9,6 +9,7 @@ import {FeNavBarComponent} from 'app/fe-nav-bar/fe-nav-bar.component';
 import {AboutComponent} from 'app/about/about.component';
 import {ShaderComponent} from 'app/shaders/shaders.component';
 import {GalleryComponent} from 'app/gallery/gallery.component';
+import {GalleryService} from 'app/gallery/gallery.service';
 
 
 @Component({

@@ -8,7 +8,8 @@ import {DOM} from "angular2/src/platform/dom/dom_adapter";
     styleUrls: ['app/gallery/gallery.css'],
     providers: [GalleryService],
     host: {
-       '(document:click)': 'onClick($event)',
+	'(document:click)': 'onClick($event)',
+	'(document:keydown)': 'keydown($event)'
   },
 })
 
@@ -17,27 +18,39 @@ export class GalleryComponent {
     public photographers = this._galleryService.getPhotographers();
     public photos = this._galleryService.getPhotos();
     public currentImg = null;
-    public currentImgIndex = 0;
+    public currentImgIndex : number = 0;
     constructor(private _galleryService: GalleryService) {
 	console.log("launched gallery site hello, screenwidth: " + screen.width);
     }
 
+    keydown(event) {
+	console.log("keydown: " + event.which);
+	if (event.which == 27) {
+	    this.closeModal({target:'modal'});
+	} else if (event.which == 37) {
+	    this.prevImg();
+	} else if (event.which = 39) {
+	    this.nextImg();
+	}
+    }
+    
+    eventHandler(event){
+	console.log("pressed a key: " + event);
+    }
+    
     openModal(currImg) {
 	this.currentImg = currImg;
-	var numb = currImg.match(/\d/g).join("");
-	this.currentImgIndex = parseInt(numb);
-	console.log("index: " + numb);
+	var numb : number = currImg.match(/\d/g).join("");
+	this.currentImgIndex = +numb;
 	var modal = document.getElementById('myModal');
 	modal.style.display = "block";
     }
     closeModal(ev) {
-	console.log("close modal" + ev);
 	var modal = document.getElementById('myModal');
 	modal.style.display = "none";
     }
 
     onClick(event) {
-	console.log("event: " + event);
 	var modal = document.getElementById('myModal');
 	if (event.target == modal) {
             modal.style.display = "none";
@@ -50,7 +63,6 @@ export class GalleryComponent {
 	} else {
 	    this.currentImgIndex = this.currentImgIndex + 1;
 	}
-	console.log("what: " + this.currentImgIndex);
 	this.currentImg = this.photos[this.currentImgIndex];
     }
 

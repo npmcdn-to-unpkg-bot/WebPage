@@ -1,19 +1,20 @@
 import {Injectable} from 'angular2/core';
 import {Http} from 'angular2/http';
 import 'rxjs/Rx';
+
 @Injectable()
 export class AlbumService {
 
-    private url = "localhost/~simon/ang2/rest/photos.php?req=all";
+    private url = "rest/api.php?type=album&req=all&id=2&x=4&y=1";
     constructor(http : Http) {
 	console.log("album service created");
-	http.get(this.url)
+	http.post(this.url)
 	    .map((res:Response) => res.json())
 	    .subscribe(
 		data => {
 		    console.log(data)
 		},
-		err => console.error(err),
+		err => console.error(err), // Syntax error här, brah'!
 		() => console.log('done')
 	    );
     }

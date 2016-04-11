@@ -2,7 +2,7 @@
 
 require_once 'db.php';
 
-class PhotoSupplier {
+class TagSupplier {
   private $db;
   private $storagePath;
 

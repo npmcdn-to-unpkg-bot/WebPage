@@ -6,7 +6,7 @@ import {MdMenu} from 'app/menu/menu.component';
 @Component({
     selector: 'fe-nav-bar',
     templateUrl: 'app/fe-nav-bar/fe-nav-bar.html'
-    styleUrls: ['app/fe-nav-bar/fe-nav-bar.css'],
+    styleUrls: ['app/fe-nav-bar/fe-nav-bar.css','app/fe-nav-bar/dropdown.css'],
     directives: [MdMenu, ROUTER_DIRECTIVES]
 })
 

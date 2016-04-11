@@ -4,16 +4,16 @@ import {Component} from 'angular2/core';
   selector: 'md-menu',
     host: {
 	'(click)': 'toggle()',
-	'[class.show-menu]': 'visibleSub'
+	'[class.show-menu]': 'visible'
     },
   template: '<ng-content></ng-content><md-backdrop class="md-backdrop"></md-backdrop>',
   styleUrls: ['./app/menu/menu.css']
 })
 export class MdMenu {
-    visibleSub: boolean = false;
+    visible: boolean = false;
 
     toggle() {
 	console.log("toggle");
-	this.visibleSub = !this.visibleSub;
+	this.visible = !this.visible;
     }
 }

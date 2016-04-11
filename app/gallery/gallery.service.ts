@@ -3,6 +3,11 @@ import {PHOTOGRAPHERS} from './photographers';
 
 @Injectable()
 export class GalleryService {
+
+    getAlbums(id) {
+	return [0,4,6];
+    }
+
     getPhotos(id) {
 	var photos = [];
 	var numberOfPhotos = 29;

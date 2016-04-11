@@ -1,0 +1,10 @@
+<div>
+  <md-content flex layout="column">
+    <div class='md-padding' layout="row" layout-wrap style="opacity: 0.9;margin:auto;" >
+      <md-card class="galleryPhoto" *ngFor="#alb of albums">
+	<a [routerLink]="['GalleryYear',{id:alb}]"><img id="{{alb}}" src="{{alb}}"></a>
+      </md-card>
+    </div>
+  </md-content>
+</div>
+

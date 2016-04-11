@@ -1,7 +1,7 @@
 import {Component,ElementRef} from 'angular2/core';
 import {GalleryService} from './gallery.service';
 import {DOM} from "angular2/src/platform/dom/dom_adapter";
-import { RouterLink, RouteParams } from 'angular2/router';
+import {RouterLink, RouteParams } from 'angular2/router';
 
 @Component({
     selector: 'gallery',

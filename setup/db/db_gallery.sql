@@ -15,6 +15,7 @@ CREATE TABLE albumList (
 CREATE TABLE albums (
        id INT NOT NULL PRIMARY KEY,
        albumName VARCHAR(64) NOT NULL,
+       tagList INT,
        descID INT,
        createdDate DATE NOT NULL,
        CONSTRAINT `albums_desc_foreign_key`

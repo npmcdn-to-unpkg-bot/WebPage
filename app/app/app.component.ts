@@ -10,7 +10,8 @@ import {AboutComponent} from 'app/about/about.component';
 import {ShaderComponent} from 'app/shaders/shaders.component';
 import {GalleryComponent} from 'app/gallery/gallery.component';
 import {GalleryService} from 'app/gallery/gallery.service';
-
+import {AlbumService} from 'app/album/album.service';
+import {AlbumComponent} from 'app/album/album.component';
 
 @Component({
     selector: 'flogsta-engine',
@@ -22,6 +23,7 @@ import {GalleryService} from 'app/gallery/gallery.service';
 @RouteConfig([
     {path:'/setup', name: 'Setup', component: SetupComponent},
     {path:'/shaders', name: 'Shaders', component: ShaderComponent},
+    {path:'/album', name: 'Album', component: AlbumComponent},
     {path:'/gallery', name: 'Gallery', component: GalleryComponent},
     {path:'/gall/:id', name: 'GalleryYear', component: GalleryComponent},
     {path:'/about', name: 'About', component: AboutComponent,  useAsDefault: true}

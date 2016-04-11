@@ -77,7 +77,7 @@ export class GalleryComponent {
 }
 
 interface Photograph {
-    year: number;
+    year: string;
     name: string;
     location: string;
 }

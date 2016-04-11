@@ -24,15 +24,25 @@ CREATE TABLE albums (
 
 CREATE TABLE photos (
        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+       dirPath VARCHAR(255) NOT NULL,
        descID INT DEFAULT 0,
        albumListID INT,
        createdDate DATE NOT NULL,
+       location VARCHAR(255) NOT NULL,
        CONSTRAINT `photos_desc_foreign_key`
 		  FOREIGN KEY (descID) REFERENCES descriptions (id)
 );
 
 DELIMITER $$
-CREATE TRIGGER `default_date` BEFORE INSERT ON (albums OR photos) FOR EACH ROW
+CREATE TRIGGER `albums_default_date` BEFORE INSERT ON albums FOR EACH ROW
+       if ( isnull(new.createdDate) ) then
+       	  set new.createdDate = CURDATE();
+       end if;
+$$
+delimiter ;
+
+DELIMITER $$
+CREATE TRIGGER `photos_default_date` BEFORE INSERT ON photos FOR EACH ROW
        if ( isnull(new.createdDate) ) then
        	  set new.createdDate = CURDATE();
        end if;

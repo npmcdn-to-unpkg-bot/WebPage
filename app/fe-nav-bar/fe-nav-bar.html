@@ -28,8 +28,25 @@
     <md-menu>
       <button md-button> Gallery </button>
       <md-menu-content>
-	<a md-button [routerLink]="['Gallery']">TestGallery</a>
+	
+	<a md-button [routerLink]="['Gallery']">TestGallery</a>	
+
+	<div>
+	<md-sub-menu>
+	  <button md-button> Show sub </button>
+	  <md-menu-content>
+	    This is content
+	  </md-menu-content>
+	</md-sub-menu>
+	</div>
       </md-menu-content>
     </md-menu>
+
+    <md-sub-menu>
+      <button md-button> Show sub </button>
+      <md-menu-content>
+	This is content
+      </md-menu-content>
+    </md-sub-menu>
   </div>
 </md-toolbar>

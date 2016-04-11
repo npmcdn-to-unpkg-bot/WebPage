@@ -25,14 +25,16 @@ class AlbumSupplier {
 
   private function queryAlbums($orderField, $orderBy) {
     // TODO: Implement the feature to pass which fields we want
-    $sql = "SELECT * FROM photos ORDER BY '$fields[$orderField]' '$orderOptions[$orderBy]';";
+    $field = $this->fields[$orderField];
+    $direction = $this->orderOptions[$orderBy];
+    $sql = "SELECT * FROM photos ORDER BY '$field' '$direction';";
     return $this->db->query_json($sql);
   }
 
   public function publicQuery($request, $orderField, $orderBy) {
     switch($request) {
       case 'all':
-        return queryAlbums($orderField, $orderBy);
+        return $this->queryAlbums($orderField, $orderBy);
         break;
       default:
         return json_encode(array('albums' => array('error' => 'undefined_request')));

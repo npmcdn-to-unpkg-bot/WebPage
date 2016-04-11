@@ -14,10 +14,10 @@ $url = "ang2/rest/api.php?type=album&req=all&id=2&x=4&y=1";
 
 // This is where we handle ALL requests. We will need to add a security layer on top to make sure
 // no bad boys get access and delets all my photos later on. 
-switch($_POST["type"]) {
+switch($_GET['type']) {
   case 'album':
     $albumFetcher = new AlbumSupplier();
-    $response = $albumFetcher->publicQuery($_POST["req"], $_POST["x"], $_POST["y"]);
+    $response = $albumFetcher->publicQuery($_GET["req"], $_GET["x"], $_GET["y"]);
     print $response;
     break;
   default:

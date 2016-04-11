@@ -2,14 +2,13 @@
 
 require_once 'db.php';
 
-class PhotoSupplier {
+class AlbumSupplier {
   private $db;
   private $storagePath;
 
   function __construct() {
     $this->db = new DBCon;
     $this->db->connect();
-    $this->storagePath = "/srv/photos/";
   }
 
   function __destruct() {
@@ -17,24 +16,24 @@ class PhotoSupplier {
     $this->db = NULL;
   }
 
-  private function queryPhoto($id) {
+  private function queryAlbum($id) {
     $sql = "SELECT * FROM photos WHERE id = '$id';";
     print $this->db->query_json($sql);
   }
 
-  private function queryPhotos($orderBy, $fields) {
+  private function queryAlbums($orderBy, $fields) {
     // TODO: Implement the feature to pass which fields we want
-    $sql = "SELECT createdDate,id,dirPath,descID,albumListID,location FROM photos ORDER BY '$orderBy' DESC;";
+    $sql = "SELECT * FROM photos ORDER BY '$orderBy' DESC;";
     print $this->db->query_json($sql);
   }
 
-  public function publicQuery($req) {
-    switch($req) {
+  public function publicQuery($request) {
+    switch($request) {
       case 'all':
-        queryPhotos("createdDate");
+        queryAlbums("createdDate");
         break;
       default:
-        print json_encode(array('photos' => array('error' => 'undefined_request')));
+        print json_encode(array('albums' => array('error' => 'undefined_request')));
         break;
     }
   }

@@ -28,17 +28,13 @@
     <md-menu>
       <button md-button> Gallery </button>
       <md-menu-content>
-	<a md-button *ngFor="#cat of categories"  [routerLink]="['GalleryYear',{id: cat}]" >{{cat}}</a>
-	<md-sub-menu>
-	  <md-menu-sub-content>
-	    <button md-button>
-	      Menu
-	    </button>
-	    Menu
-	  </md-menu-sub-content>
-	</md-sub-menu>
+	<a md-button *ngFor="#cat of categories"  [routerLink]="['GalleryYear',{id: cat}]" >{{cat}}</a>	
+      </md-menu-content>
 
-      </md-menu-content>      
+      <md-menu-content style="position: absolute; left:100px;">
+	test
+      </md-menu-content>
+
     </md-menu>
 
   </div>

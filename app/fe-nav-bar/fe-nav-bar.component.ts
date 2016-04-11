@@ -13,8 +13,10 @@ import {MdSubMenu} from 'app/submenu/submenu.component';
 
 export class FeNavBarComponent {
     public title = "About";
+
+    public categories = [2016,2015];
+    
     constructor() {
-	console.log("called navbar constructor");
     }
 
     clicked(str) {

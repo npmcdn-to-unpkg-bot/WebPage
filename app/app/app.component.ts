@@ -23,6 +23,7 @@ import {GalleryService} from 'app/gallery/gallery.service';
     {path:'/setup', name: 'Setup', component: SetupComponent},
     {path:'/shaders', name: 'Shaders', component: ShaderComponent},
     {path:'/gallery', name: 'Gallery', component: GalleryComponent},
+    {path:'/gall/:id', name: 'GalleryYear', component: GalleryComponent},
     {path:'/about', name: 'About', component: AboutComponent,  useAsDefault: true}
 ])
 
@@ -30,7 +31,6 @@ export class AppComponent {
     public about = 'About us';
 
     constructor() {
-	console.log("constructed my-app");
     }
     
     clicked(string: str) {

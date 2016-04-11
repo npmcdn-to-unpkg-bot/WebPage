@@ -24,7 +24,7 @@ md-menu:host .md-backdrop {
 }
 
 md-menu.show-menu:host md-menu-content {
-    visibility: visible;
+    visibility: visibleSub;
     opacity: 1;
 }
 

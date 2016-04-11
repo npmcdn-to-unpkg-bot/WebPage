@@ -1,6 +1,7 @@
 import {Component,ElementRef} from 'angular2/core';
 import {GalleryService} from './gallery.service';
 import {DOM} from "angular2/src/platform/dom/dom_adapter";
+import { RouterLink, RouteParams } from 'angular2/router';
 
 @Component({
     selector: 'gallery',
@@ -16,12 +17,15 @@ import {DOM} from "angular2/src/platform/dom/dom_adapter";
 export class GalleryComponent {
     public title = "Gallery";
     public photographers = this._galleryService.getPhotographers();
-    public photos = this._galleryService.getPhotos();
+    public photos = [];// = this._galleryService.getPhotos();
+    public id = 0;
     public currentImg = null;
     public currentImgIndex : number = 0;
     public currentAuthor : number = 0; 
-    constructor(private _galleryService: GalleryService) {
-	console.log("launched gallery site hello, screenwidth: " + screen.width);
+
+    constructor(private _galleryService: GalleryService, private _routeParams:RouteParams) {
+	this.id  = this._routeParams.get('id');
+	this.photos = this._galleryService.getPhotos(this.id);
     }
 
     keydown(event) {

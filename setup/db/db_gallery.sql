@@ -8,12 +8,12 @@ CREATE TABLE descriptions (
 CREATE TABLE albumList (
        listID INT NOT NULL,
        photoID INT NOT NULL,
-       CONSTRAINT `uKey` PRIMARY KEY (listID, photoID)
+       CONSTRAINT `albumlist_key` PRIMARY KEY (listID, photoID)
 );
 
 
 CREATE TABLE albums (
-       id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+       id INT NOT NULL PRIMARY KEY,
        name VARCHAR(64) NOT NULL,
        descID INT,
        createdDate DATE NOT NULL,
@@ -21,14 +21,27 @@ CREATE TABLE albums (
        		  FOREIGN KEY (descID) REFERENCES descriptions (id)
 );
 
+CREATE TABLE tagList (
+       id INT NOT NULL,
+       tagID INT NOT NULL,
+       CONSTRAINT `taglist_key` PRIMARY KEY (id, tagID)
+);
+
+CREATE TABLE tags (
+       id INT NOT NULL PRIMARY KEY,
+       tag VARCHAR(64) NOT NULL,
+);
 
 CREATE TABLE photos (
        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
        dirPath VARCHAR(255) NOT NULL,
        descID INT DEFAULT 0,
        albumListID INT,
+       tagListID INT,
        createdDate DATE NOT NULL,
-       location VARCHAR(255) NOT NULL,
+       locRaw VARCHAR(255) NOT NULL,
+       locHD VARCHAR(255) NOT NULL,
+       locThumb VARCHAR(255) NOT NULL,
        CONSTRAINT `photos_desc_foreign_key`
 		  FOREIGN KEY (descID) REFERENCES descriptions (id)
 );

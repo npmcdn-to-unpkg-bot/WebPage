@@ -29,13 +29,39 @@
       <button md-button> Gallery </button>
       <md-menu-content>
 	<a md-button [routerLink]="['Album']">All</a>
-	<a md-button *ngFor="#cat of categories"  [routerLink]="['GalleryYear',{id: cat}]" >{{cat}}</a>	
+	<a md-button *ngFor="#cat of categories"  [routerLink]="['GalleryYear',{id: cat}]" >{{cat}}</a>
+	<md-menu id="submenu">
+	  <button id="subbut" md-button>Submenu</button>
+	  <md-menu-content id="submenucontent">
+	    This is content
+	  </md-menu-content>
+	</md-menu>
       </md-menu-content>
     </md-menu>
 
-   
-    
   </div>
 </md-toolbar>
-
-
+<br><br>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+    <ul>
+      <li><a href="#"><button md-button> Gallery </button></a></li>
+      <li><a href="#"><button md-button> Tutorial </button></a>
+	<ul>
+	  <li><a href="#"><button md-button> Stuff </button></a>
+	    <ul>
+	      <li><a href="#"><button md-button> Html </button></a></li>
+	      <li><a href="#"><button md-button> Css </button></a></li>
+	    </ul>
+	  </li>
+	</ul>
+      </li>
+      <li><a href="#"><button md-button> Articles </button></a>
+	<ul>
+	  <li><a href="#">Web Design</a></li>
+	  <li><a href="#">User Experience</a></li>
+	</ul>
+      </li>
+    </ul>
+    </div>
+</md-toolbar>

@@ -17,8 +17,9 @@ export class AlbumComponent {
     public albums = [];
     
     constructor(private _albumService: AlbumService) {
-	console.log("constructed album");
+	console.log("Attempting to fetch albums!");
 	this.albums = this._albumService.getAlbums();
+	console.log("Done attempting...");
     }
 
 }

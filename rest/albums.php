@@ -2,6 +2,9 @@
 
 require_once 'db.php';
 
+
+// x = index in array $fields
+// y = index in array $orderOptions
 class AlbumSupplier {
   private $db;
   private $storagePath;
@@ -20,7 +23,7 @@ class AlbumSupplier {
 
   private function queryAlbum($id) {
     $sql = "SELECT * FROM photos WHERE id = '$id';";
-    return $this->db->query_json($sql);
+    return $this->db->query($sql);
   }
 
   private function queryAlbums($orderField, $orderBy) {
@@ -28,7 +31,7 @@ class AlbumSupplier {
     $field = $this->fields[$orderField];
     $direction = $this->orderOptions[$orderBy];
     $sql = "SELECT * FROM photos ORDER BY '$field' '$direction';";
-    return $this->db->query_json($sql);
+    return $this->db->query($sql);
   }
 
   public function publicQuery($request, $orderField, $orderBy) {
@@ -37,7 +40,7 @@ class AlbumSupplier {
         return $this->queryAlbums($orderField, $orderBy);
         break;
       default:
-        return json_encode(array('albums' => array('error' => 'undefined_request')));
+        return array('albums' => array('error' => 'undefined_request'));
         break;
     }
   }

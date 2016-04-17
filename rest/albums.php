@@ -27,10 +27,9 @@ class AlbumSupplier {
   }
 
   private function queryAlbums($orderField, $orderBy) {
-    // TODO: Implement the feature to pass which fields we want
-    $field = $this->fields[$orderField];
-    $direction = $this->orderOptions[$orderBy];
-    $sql = "SELECT * FROM photos ORDER BY '$field' '$direction';";
+    $orderField = $this->fields[$orderField];
+    $orderDirection = $this->orderOptions[$orderBy];
+    $sql = "SELECT A.albumName,A.createdDate,D.description FROM albums AS A, descriptions AS D WHERE A.descID = D.id ORDER BY A.$orderField $orderDirection;";
     return $this->db->query($sql);
   }
 

@@ -1,17 +1,25 @@
 <?php
 
+define("PHOTOS_BASEDIR", "/srv/photos/");
+
 function prepare_dir($dir) {
   if (!is_dir($dir)) {
-    mkdir($dir, 644, true);
+    mkdir($dir, 0754, true);
   }
 }
 
 function generate_path($date, $hash_id) {
-
+  $datePath = str_replace("-", "/", $date);
+  $fullPath = PHOTOS_BASEDIR . $datePath . "/" . $hash_id;
+  prepare_dir($fullPath);
+  print $fullPath . " has been created!";
 }
 
-function generate_imgs($path) {
-  return hash("sha256", $path);
+function generate_imgs($imgPath) {
+  return hash("sha256", $imgPath);
 }
+
+generate_imgs("dsuifb");
+generate_path("2011-01-04", "thisisafailed_hashe04");
 
 ?>

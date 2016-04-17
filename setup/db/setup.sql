@@ -1,5 +1,12 @@
 # when in mysql, just nu 'source setup.sql'
-source db_create.sql;
+SOURCE db_drop.sql;
+
+SOURCE db_create.sql;
 use gallery;
-source db_gallery.sql;
-show tables;
+SOURCE db_gallery.sql;
+SOURCE db_gallery_pop.sql;
+SHOW TABLES;
+SELECT * FROM albums;
+SELECT * FROM descriptions;
+SELECT * FROM photos;
+SELECT * FROM albumList;

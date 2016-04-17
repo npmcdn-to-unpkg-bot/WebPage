@@ -1,16 +1,14 @@
-This is album
-<div *ngFor="#albObj of albums | async">
-  {{albObj.albumName}}
-</div>
-{{albums}}
-<!--
-<div>
-  <md-content flex layout="column">
-    <div class='md-padding' layout="row" layout-wrap style="opacity: 0.9;margin:auto;" >
-      <md-card class="galleryPhoto" *ngFor="#alb of albums">
-	<a [routerLink]="['GalleryYear',{id:alb}]"><img id="{{alb}}" src="{{alb}}"></a>
-      </md-card>
-    </div>
-  </md-content>
-</div>
--->
+<md-content layout-align="start center" layout="rows" style="width: 100%;">
+  <div *ngFor="#albObj of hack(albums)">
+    <md-card>
+      <md-card-title>
+	<md-card-title-text>
+	  {{albObj.albumName}}
+	</md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+	{{albObj.description}}
+      </md-card-content>
+    </md-card>
+  </div>
+</md-content>

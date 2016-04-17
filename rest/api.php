@@ -35,6 +35,7 @@ function utf8ize($d) {
 // no bad boys get access and delets all my photos later on.
 // print file_get_contents('php://input');
 
+header('Content-Type: application/json');
 switch($_POST['type']) {
   case 'album':
     switch($_POST['req']) {

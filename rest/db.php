@@ -16,11 +16,8 @@
     }
 
     public function connect() {
-      $this->conn = new mysqli(
-          $this->sqlservername,
-          $this->sqlusername,
-          $this->sqlpassword,
-          $this->dbname);
+      $this->conn = new mysqli($this->sqlservername, $this->sqlusername,
+                               $this->sqlpassword, $this->dbname);
       if ($this->conn->connect_error) {
         die("Connection failed: " . $this->conn->connect_error);
         return TRUE;
@@ -28,7 +25,7 @@
       $this->conn->query("SET NAMES 'utf8'");
       return FALSE;
     }
-
+    
     public function disconnect() {
       $this->conn->close();
       $this->conn = NULL;
@@ -47,6 +44,8 @@
 
     public function query($query) {
       $result = $this->conn->query($query);
+      if (!$result)
+        print $this->conn->error;
       $rows = array();
       if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -56,11 +55,17 @@
       return $rows;
     }
 
+    public function countQuery($query) {
+      $result = $this->conn->query($query);
+      $data = $result->fetch_assoc();
+      return $data['count'];
+    }
+
     public function insert_query($query) {
-      if ($this->conn->query($query) === TRUE) {
-        return TRUE;
+      if ($this->conn->query($query)) {
+        return true;
       } else {
-        return FALSE;
+        return $this->conn->error;
       }
     }
 

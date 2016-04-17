@@ -23,8 +23,7 @@ CREATE TABLE albums (
 );
 
 CREATE TABLE photos (
-       id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-       dirPath VARCHAR(255) NOT NULL,
+       id VARCHAR(64) PRIMARY KEY,
        descID INT DEFAULT 0,
        albumListID INT,
        tagListID INT,

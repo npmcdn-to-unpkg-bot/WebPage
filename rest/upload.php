@@ -2,7 +2,6 @@
 
 require_once 'db.php';
 require_once 'misc.php';
-
 // var_dump($_FILES);
 // var_dump($_POST);
 

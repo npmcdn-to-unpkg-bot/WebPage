@@ -1,6 +1,7 @@
 <?php
 
-define("PHOTOS_BASEDIR", "/srv/photos/");
+//define("PHOTOS_BASEDIR", "/srv/photos/");
+define("PHOTOS_BASEDIR", "../assets/photos/");
 define("PHOTO_HIGH_W", 1920);
 define("PHOTO_HIGH_H", 1080);
 define("PHOTO_MED_W", 800);
@@ -44,21 +45,26 @@ function generate_copy($sourcePath, $destPath, $ext, $destHeight, $destWidth, $s
   
   $dest = imagecreatetruecolor($destWidth, $destHeight);
   imagecopyresized($dest, $source, $destX, $destY, $srcX, $srcY, $destWidth, $destHeight, $origWidth, $origHeight);
-
+  $ret = FALSE;
   switch($ext) {
     case 'jpg':
     case 'jpeg':
     case 'JPG':
     case 'JPEG':
-      imagejpeg($dest, $destPath);
+      $ret = imagejpeg($dest, $destPath);
       break;
     case 'png':
     case 'PNG':
-      imagepng($dest, $destPath);
+      $ret = imagepng($dest, $destPath);
       break;
     default:
       print "Fuck you phph\n";
       break;
+  }
+  if (!$ret) {
+      print("An error occured\nYou picture was not uploaded.");
+  } else {
+      print("Picture upload was successfull for picture " . $destPath . "!\n");
   }
   imagedestroy($dest);
   imagedestroy($source);

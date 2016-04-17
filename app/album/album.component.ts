@@ -15,11 +15,16 @@ import {DOM} from "angular2/src/platform/dom/dom_adapter";
 export class AlbumComponent {
     public title = "Album";
     public albums = [];
-    
+    alb : string;
     constructor(private _albumService: AlbumService) {
 	console.log("Attempting to fetch albums!");
-	this.albums = this._albumService.getAlbums();
-	console.log("Done attempting...");
+	this.albums = this._albumService.getAlbums()
+	    .subscribe(data => this.albums = JSON.parse(data));
     }
+
+    hack(val) {
+	return Array.from(val);
+    }
+
 
 }

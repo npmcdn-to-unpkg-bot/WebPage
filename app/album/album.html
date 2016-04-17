@@ -1,5 +1,8 @@
 This is album
-
+<div *ngFor="#albObj of albums | async">
+  {{albObj.albumName}}
+</div>
+{{albums}}
 <!--
 <div>
   <md-content flex layout="column">

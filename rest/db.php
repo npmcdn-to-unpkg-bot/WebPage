@@ -17,14 +17,15 @@
 
     public function connect() {
       $this->conn = new mysqli(
-      $this->sqlservername,
-      $this->sqlusername,
-      $this->sqlpassword,
-      $this->dbname);
+          $this->sqlservername,
+          $this->sqlusername,
+          $this->sqlpassword,
+          $this->dbname);
       if ($this->conn->connect_error) {
         die("Connection failed: " . $this->conn->connect_error);
         return TRUE;
       }
+      $this->conn->query("SET NAMES 'utf8'");
       return FALSE;
     }
 

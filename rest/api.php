@@ -8,6 +8,17 @@ require_once 'photos.php';
 $path = "/srv/photos/YYYY/MM/DD/<SHA-HASH>/*";
 $url = "ang2/rest/api.php?type=album&req=all&id=2&x=4&y=1";
 
+function utf8ize($d) {
+    if (is_array($d)) {
+        foreach ($d as $k => $v) {
+            $d[$k] = utf8ize($v);
+        }
+    } else if (is_string ($d)) {
+        return utf8_encode($d);
+    }
+    return $d;
+}
+
 // Log our $_POST and $_GET
 //$log_msg_post = "This is our POST: ";
 //$log_msg_get = "This is our GET: ";
@@ -30,6 +41,7 @@ switch($_POST['type']) {
       case 'all':
         $albumFetcher = new AlbumSupplier();
         $response = $albumFetcher->publicQuery($_POST["req"], 4, 1);
+        //print var_dump($response);
         print json_encode($response);
         break;
       default:

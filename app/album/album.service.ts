@@ -5,25 +5,12 @@ import 'rxjs/Rx';
 @Injectable()
 export class AlbumService {
     private url = "rest/api.php";
-
+    private _http;
+    private _albums = [];
+    
     constructor(http : Http) {
 	console.log("Album service created");
-	console.log("Sending request to: " + this.url);
-
-	// let args = JSON.stringify({ type: 'album', req: 'all'});
-	let args = "type=album&req=all";
-	var ourHeader = new Headers();
-	ourHeader.append("Content-Type", "application/x-www-form-urlencoded");
-	
-	http.post(this.url, args, { headers: ourHeader})
-	    .map((res:Response) => res.json())
-	    .subscribe(
-		data => {
-		    console.log(data)
-		},
-		err => this.logError(err), // Syntax error här, brah'!
-		() => console.log('Done')
-	    );
+	this._http = http;
     }
 
     logError(err) {
@@ -31,6 +18,25 @@ export class AlbumService {
     }
     
     getAlbums() {
-	return [0,4,6];
+	//return this._albums;
+	console.log("Sending request to: " + this.url);
+
+	// let args = JSON.stringify({ type: 'album', req: 'all'});
+	let args = "type=album&req=all";
+	var ourHeader = new Headers();
+	ourHeader.append("Content-Type", "application/x-www-form-urlencoded");
+	var dataret;
+
+	return this._http.post(this.url, args, { headers: ourHeader})
+	    .map((res:Response) => res.json());
+	    /*.subscribe(
+		data => {
+		    console.log(data);
+		    //dataret = data;
+		},
+		err => this.logError(err), // Syntax error här, brah'!
+		() => console.log('Done')
+	    );*/
     }
+
 }

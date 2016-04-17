@@ -22,6 +22,8 @@ $url = "ang2/rest/api.php?type=album&req=all&id=2&x=4&y=1";
 
 // This is where we handle ALL requests. We will need to add a security layer on top to make sure
 // no bad boys get access and delets all my photos later on.
+// print file_get_contents('php://input');
+
 switch($_POST['type']) {
   case 'album':
     switch($_POST['req']) {

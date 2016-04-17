@@ -26,6 +26,7 @@ export class GalleryComponent {
     constructor(private _galleryService: GalleryService, private _routeParams:RouteParams) {
 	this.id  = this._routeParams.get('id');
 	this.photos = this._galleryService.getPhotos(this.id);
+	console.log("this id: " + this.id);
     }
 
     keydown(event) {

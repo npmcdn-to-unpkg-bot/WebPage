@@ -4,34 +4,6 @@
       <a href="www.google.se"><i class="material-icons">face</i></a>
     </button>
 
-    <!--
-    <md-menu>
-      <button md-button> Tutorials </button>
-      <md-menu-content>
-	<a md-button [routerLink]="['About']">Part 1, setup</a>
-	<a md-button [routerLink]="['About']">Part 2, first shader</a>
-	<a md-button [routerLink]="['About']">Part 3, advanced</a>
-
-      </md-menu-content>
-    </md-menu>    
-
-    <md-menu>
-      <button md-button> Code </button>
-      <md-menu-content>
-	<a md-button [routerLink]="['Setup']">Setup</a>
-	<a md-button [routerLink]="['Shaders']">Shaders</a>
-	<a md-button [routerLink]="['Shaders']">Examples</a>
-      </md-menu-content>
-    </md-menu>-->
-    <!--
-	<md-menu>
-	  <button md-button> Gallery </button>
-	  <md-menu-content>
-	    <a md-button [routerLink]="['Album']">All</a>
-	    <a md-button *ngFor="#cat of categories"  [routerLink]="['GalleryYear',{id: cat}]" >{{cat}}</a>
-	  </md-menu-content>
-	</md-menu>
-	-->
     <ul>
       <li><a md-button [routerLink]="['About']">About</a></li>
       <li><a md-button [routerLink]="['Setup']">Setup</a></li>
@@ -41,8 +13,8 @@
       
       <li><a md-button [routerLink]="['Gallery']"> Gallery </a>
 	<ul>
-	  <li><a href="#"><button md-button> All </button></a></li>
-	  <li><a md-button href="#">Albums</a>
+	  <li><a [routerLink]="['Albums']"><button md-button> All </button></a></li>
+	  <li><a md-button>Albums</a>
 	    <ul>
 	      <li *ngFor="#cat of categories">
 		<a md-button [routerLink]="['GalleryYear',{id: cat}]" >{{cat}}</a>

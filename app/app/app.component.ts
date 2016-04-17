@@ -2,8 +2,6 @@ import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {MATERIAL_DIRECTIVES, MATERIAL_PROVIDERS} from "ng2-material/all";
 
-import {MdMenu} from 'app/menu/menu.component';
-
 import {SetupComponent} from 'app/setup/setup.component';
 import {FeNavBarComponent} from 'app/fe-nav-bar/fe-nav-bar.component';
 import {AboutComponent} from 'app/about/about.component';
@@ -17,7 +15,7 @@ import {AlbumComponent} from 'app/album/album.component';
     selector: 'flogsta-engine',
     templateUrl: 'app/app/app.html',
     styleUrls: ['app/app/app.css'],
-    directives: [SetupComponent, FeNavBarComponent, MdMenu, ROUTER_DIRECTIVES]
+    directives: [SetupComponent, FeNavBarComponent, ROUTER_DIRECTIVES]
 })
 
 @RouteConfig([
@@ -26,6 +24,7 @@ import {AlbumComponent} from 'app/album/album.component';
     {path:'/album', name: 'Album', component: AlbumComponent},
     {path:'/gallery', name: 'Gallery', component: GalleryComponent},
     {path:'/gall/:id', name: 'GalleryYear', component: GalleryComponent},
+    {path:'/albums', name: 'Albums', component: AlbumComponent},
     {path:'/about', name: 'About', component: AboutComponent,  useAsDefault: true}
 ])
 

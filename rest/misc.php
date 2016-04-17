@@ -19,7 +19,5 @@ function generate_imgs($imgPath) {
   return hash("sha256", $imgPath);
 }
 
-generate_imgs("dsuifb");
-generate_path("2011-01-04", "thisisafailed_hashe04");
 
 ?>

@@ -30,13 +30,22 @@
     <script src="https://rawgit.com/shlomiassaf/angular2-modal/master/dist/systemjs/angular2-modal-0.0.5.js"></script>
     <script>
       System.config({
-        transpiler: 'typescript', 
-          typescriptOptions: { emitDecoratorMetadata: true }, 
-          packages: {       
-             app: {
-              defaultExtension: 'ts'
-            },
-          },
+      map: {
+         'ng2-material':'deps/ng2-material/source'
+      },
+      transpiler: 'typescript', 
+      typescriptOptions: { emitDecoratorMetadata: true }, 
+      packages: {       
+         app: {
+           defaultExtension: 'ts'
+         },
+        'deps/ng2-material': {
+           defaultExtension: 'ts'
+        }
+      },
+      'ng2-material': {
+        defaultExtension: 'ts'
+      }
       });
       System.import('app/main')
             .then(null, console.error.bind(console));

@@ -1,0 +1,29 @@
+.myInput {
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.transition{
+  -webkit-transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out;
+  -moz-transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out;
+  -ms-transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out ;
+  -o-transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out;
+  transition: opacity 1000ms ease-in-out,margin-left 500ms ease-in-out;
+  opacity: 0.0;
+}
+
+.transition{
+    opacity: 1.0;
+    margin-left: 0;
+}

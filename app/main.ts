@@ -11,7 +11,9 @@ import {
 
 import {provide} from 'angular2/core';
 import {LocationStrategy, Location, HashLocationStrategy } from 'angular2/router';
+import {MATERIAL_DIRECTIVES} from 'ng2-material/all';
+import {BrowserDomAdapter} from "angular2/src/platform/browser/browser_adapter";
 
-bootstrap(AppComponent,[HTTP_PROVIDERS, ROUTER_PROVIDERS ,
+bootstrap(AppComponent,[MATERIAL_DIRECTIVES, HTTP_PROVIDERS, ROUTER_PROVIDERS ,
 			provide(APP_BASE_HREF, {useValue : '/'}),
 			provide(LocationStrategy, {useClass: HashLocationStrategy})]);

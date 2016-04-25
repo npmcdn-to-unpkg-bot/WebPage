@@ -10,7 +10,7 @@ import {GalleryComponent} from 'app/gallery/gallery.component';
 import {GalleryService} from 'app/gallery/gallery.service';
 import {AlbumService} from 'app/album/album.service';
 import {AlbumComponent} from 'app/album/album.component';
-
+import {UploadComponent} from 'app/upload/upload.component';
 @Component({
     selector: 'flogsta-engine',
     templateUrl: 'app/app/app.html',
@@ -25,6 +25,7 @@ import {AlbumComponent} from 'app/album/album.component';
     {path:'/gallery', name: 'Gallery', component: GalleryComponent},
     {path:'/gall/:id', name: 'GalleryYear', component: GalleryComponent},
     {path:'/albums', name: 'Albums', component: AlbumComponent},
+    {path:'/upload', name: 'Upload', component: UploadComponent},
     {path:'/about', name: 'About', component: AboutComponent,  useAsDefault: true}
 ])
 

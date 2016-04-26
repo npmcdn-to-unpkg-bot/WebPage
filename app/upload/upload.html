@@ -1,46 +1,13 @@
 <md-card style="width: 80%;margin:auto;">
-<div style="margin:auto;">
-  <label for="files-pb" class="ui small black button right icon upload-button">
-      <i class="ion-document-text icon"></i>
-      Choose files
-  </label>
-  <input type="file" 
-         id="files-pb"
-         style="display:none;"
-         [ng-file-select]="options"
-         (onUpload)="handleUpload($event)"
-         multiple>
-</div>
 
-<div class="ui divider"></div>
-
-<div *ngFor="#progressObj of uploadProgresses">
-  <div class="ui indicating olive progress">
-    <div class="bar" [style.width]="progressObj.percent + '%'"></div>
-    <div class="label">Uploading file ({{ progressObj.percent }}%)</div>
+  <input class="inputfile" type="file" name="file" id="file" class="inputfile"  (change)="onChange($event)" multiple/>
+  <label class="myInputLabel" for="file">Choose file/files</label>
+  <div *ngFor="#i of indexArray">
+    <div class="progressWrapper" >
+      <p style="margin-left: auto;margin-right: auto;">{{files[i].name}}</p>
+      <br>
+      <progress style="width:100%;margin:auto;" max="100" value="{{uploadProgresses[i]}}"></progress>
+      <hr>
+    </div>
   </div>
-</div>
 </md-card>
-<!--
-<md-card style="width: 80%;margin:auto;">
-  <br>
-  <div style="margin:auto;">
-    <input type="file" name="file" id="file" class="inputfile"  (change)="onChange($event)" multiple/>
-    <label for="file">Choose file/files</label>
-    <button md-button (click)="upload()">Upload</button>
-  </div>
-
-  <div>
-    <md-progress-linear style="width:80%;margin:auto;" [ngClass]="{'transition':progressBar}" mode="determinate" [value]="determinateValue"></md-progress-linear>
-  </div>
-  <br>
-  <ul style="margin:auto">
-    <li *ngFor="#file of files">
-      {{file.name}}
-    </li>
-  </ul>
-  <br>
-</md-card>
-
-
--->

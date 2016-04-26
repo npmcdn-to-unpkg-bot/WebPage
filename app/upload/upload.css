@@ -1,4 +1,4 @@
-/*.myInput {
+.myInput {
     opacity: 0;
     overflow: hidden;
     position: absolute;
@@ -12,6 +12,11 @@
     overflow: hidden;
     position: absolute;
     z-index: -1;
+    margin:auto;
+}
+
+.myInputLabel {
+    margin:auto;
 }
 
 .transition{
@@ -26,4 +31,13 @@
 .transition{
     opacity: 1.0;
     margin-left: 0;
-}*/
+}
+
+.myProgress {
+    margin:auto;
+}
+
+.progressWrapper {
+    margin:auto;
+    width:70%;
+}

@@ -4,10 +4,10 @@ curl \
 	-F "type=upload" \
 	-F "albums[]=Test album one" \
 	-F "albums[]=Test album two" \
-	-F "images[]=@20.jpg" \
-	-F "images[]=@19.jpg" \
-	-F "images[]=@15.jpg" \
-	-F "images[]=@12.jpg" \
+	-F "images[]=@7.jpg" \
+	-F "images[]=@1.jpg" \
+	-F "images[]=@2.jpg" \
+	-F "images[]=@5.jpg" \
 	-F "images[]=@17.jpg" \
         -F "desc=This is a test file!" \
 	http://localhost/\~simon/ang2/rest/api.php

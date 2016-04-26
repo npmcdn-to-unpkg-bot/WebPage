@@ -2,6 +2,9 @@ import {Component,NgZone} from 'angular2/core';
 import {UploadService} from './upload.service';
 import {MATERIAL_DIRECTIVES} from "ng2-material/all";
 
+import {Http, Headers} from 'angular2/http';
+import 'rxjs/Rx';
+
 @Component({
     selector: 'upload',
     templateUrl: 'app/upload/upload.html',
@@ -10,7 +13,7 @@ import {MATERIAL_DIRECTIVES} from "ng2-material/all";
 })
 
 export class UploadComponent {
-    public test = "";
+    public test = "testing";
     public files;
     public upload = {
 	albums : "",
@@ -18,37 +21,28 @@ export class UploadComponent {
 	desc : ""
     };
     
-    uploadProgresses: any[] = [];
+    //uploadProgresses: any[] = [];
+    public uploadProgress = 0;
     zone: NgZone;
     indexArray: any[] = [];
-    progress number = 0;
-    public url: 'http://localhost:10050/upload';
+    showProgress = false;
     
+    public url: 'http://localhost:10050/upload';
+
     constructor(private _uploadService: UploadService) {
 	this.zone = new NgZone({ enableLongStackTrace: false });
-    }
-    
-    increaseProgress(index, doneCallback: () => void) {
-	this.uploadProgresses[index] += 1;
-	console.log(`Current progress: ${this.progress}%`);
-	
-	if (this.uploadProgresses[index] < 100) {
-	    window.setTimeout(() => {
-		this.increaseProgress(index,doneCallback);
-	    }, 10);
-	} else {
-	    doneCallback();
-	}
+	this.uploadProgress = 0;
+	this._uploadService.progress$.subscribe(
+	    data => {
+		this.uploadProgress = data;
+	    });
     }
     
     onChange(event) {
-	var len = event.target.files.length;
-	this.files = event.target.files;
-	for(var i = 0; i < len; i = i + 1) {
-	    this.indexArray[i] = i;
-	    this.uploadProgresses[i] = 0 + i*10;
-	    this.increaseProgress(i,() => console.log('Done!'));
-	}
-	this._uploadService.sendPhotosXXX(event.target.files);
+	this.showProgress = true;
+	this._uploadService.makeFileRequest("rest/api.php", [], event.target.files)
+	    .subscribe(() => {
+		console.log('sent');
+	    });
     }
 }

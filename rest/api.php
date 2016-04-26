@@ -2,6 +2,7 @@
 
 require_once 'tags.php';
 require_once 'albums.php';
+require_once 'upload.php';
 require_once 'photos.php';
 // require_once 'misc.php';
 
@@ -50,8 +51,9 @@ switch($_POST['type']) {
         break;
     }
     break;
-  case 'upload':
-    break;
+  case 'upload':                   // For a successful upload we need: |albums| > 0, |images| > 0
+    handleUploadedFiles();       // Optional data: description, |tags| 
+    break;                         // (NOTE: default |tags| == |albums|, otherwise |tags| += |albums|)  
   case 'createAlbum';
     break;
   default:

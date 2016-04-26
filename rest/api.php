@@ -51,9 +51,9 @@ switch($_POST['type']) {
         break;
     }
     break;
-  case 'upload':                   // For a successful upload we need: |albums| > 0, |images| > 0
-    handleUploadedFiles();       // Optional data: description, |tags| 
-    break;                         // (NOTE: default |tags| == |albums|, otherwise |tags| += |albums|)  
+  case 'upload':                                // For a successful upload we need: |albums| > 0, |images| > 0
+    print json_encode(handleUploadedFiles());   // Optional data: description, |tags| 
+    break;                                      // (NOTE: default |tags| == |albums|, otherwise |tags| += |albums|)  
   case 'createAlbum';
     break;
   default:

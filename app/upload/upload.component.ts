@@ -49,6 +49,6 @@ export class UploadComponent {
 	    this.uploadProgresses[i] = 0 + i*10;
 	    this.increaseProgress(i,() => console.log('Done!'));
 	}
-	this._uploadService.sendPhotos(event.target.files);
+	this._uploadService.sendPhotosXXX(event.target.files);
     }
 }

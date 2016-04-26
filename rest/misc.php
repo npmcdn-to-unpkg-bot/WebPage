@@ -63,8 +63,6 @@ function generate_copy($sourcePath, $destPath, $ext, $destHeight, $destWidth, $s
   }
   if (!$ret) {
       print("An error occured\nYour picture was not handled properly.");
-  } else {
-      print("Picture upload was successful for picture " . $destPath . "!\n");
   }
   imagedestroy($dest);
   imagedestroy($source);

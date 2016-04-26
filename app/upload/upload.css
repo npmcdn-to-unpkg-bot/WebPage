@@ -17,6 +17,8 @@
 
 .myInputLabel {
     width:40px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .transition{
@@ -59,4 +61,22 @@ progress[value]::-webkit-progress-bar {
 progress[value^="100"]::-webkit-progress-bar {
     background-color:  #00cc66;
     border-radius:9px;
+}
+
+.galleryInput {
+    border-radius: 7px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.galleryLabel {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.asterix {
+    font-size:70%;
+    margin-left: auto;
+    margin-right: auto;    
 }

@@ -11,6 +11,7 @@ import {GalleryService} from 'app/gallery/gallery.service';
 import {AlbumService} from 'app/album/album.service';
 import {AlbumComponent} from 'app/album/album.component';
 import {UploadComponent} from 'app/upload/upload.component';
+import {UploadService} from 'app/upload/upload.service';
 
 @Component({
     selector: 'flogsta-engine',

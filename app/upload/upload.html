@@ -1,18 +1,29 @@
 <md-card style="width: 80%;margin:auto;">
+    <label class="galleryLabel">Albums*</label>
+    <input class="galleryInput" [(ngModel)]="upload.albums" type="text">
 
-  <input class="inputfile" type="file" name="file" id="file" class="inputfile"  (change)="onChange($event)" multiple/>
+    <label class="galleryLabel">Tags</label>
+    <input class="galleryInput" [(ngModel)]="upload.tags" type="text">
+
+    <label class="galleryLabel">Description</label>
+    <input class="galleryInput" [(ngModel)]="upload.desc" type="text">
+    <p class="asterix">* mandatory input</p>
+    <input class="inputfile" type="file" name="file" id="file" class="inputfile"  (change)="onChange($event)" multiple/>
 
     <label md-raised-button class="md-raised myInputLabel" for="file">
       <!--<i md-icon class="material-icons">file_upload</i>-->
       Upload
     </label>
 
-  <div *ngFor="#i of indexArray">
-    <div class="progressWrapper" >
-      <p style="margin-left: auto;margin-right: auto;"><b>{{files[i].name}}</b></p>
-      <progress style="width:100%;margin:auto;border-radius:9px;" max="100" value="{{uploadProgresses[i]}}"></progress>
+    <div *ngFor="#i of indexArray">
+      <div class="progressWrapper" >
+	<p style="margin-left: auto;margin-right: auto;"><b>{{files[i].name}}</b></p>
+	<progress style="width:100%;margin:auto;border-radius:9px;" max="100" value="{{uploadProgresses[i]}}"></progress>
+      </div>
     </div>
-  </div>
 </md-card>
 
 
+{{upload.albums}}
+{{upload.tags}}
+{{upload.desc}}

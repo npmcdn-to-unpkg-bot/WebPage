@@ -2,39 +2,37 @@
 
 require_once 'db.php';
 require_once 'misc.php';
-// var_dump($_FILES);
-// var_dump($_POST);
 
-$curDate = date("Y/m/d");
-$hash_id = hash_file("sha256", $_FILES["image"]["tmp_name"]);
+$emptyOrNotEmpty = !empty($_FILES['images']);
+if ($emptyOrNotEmpty) {
+  $db = new DBCon();
+  $db->connect();
+  $x = sizeof($_FILES['images']['name']);
+  $curDate = date("Y/m/d");
+  print("We have received $x images!\n");
+  foreach ($_FILES['images']['name'] as $key => $fileName) {
+    $hash_id = hash_file("sha256", $_FILES['images']['tmp_name'][$key]);
+    $sqlCheck = "SELECT COUNT(*) AS count FROM photos WHERE id = '$hash_id';"; // Query to check if image already exists
+    $extTmp = explode(".", $_FILES['images']['name'][$key]);
+    $extension = $extTmp[count($extTmp) - 1];
+    $destinationPath = generate_path($curDate, $hash_id);
+    $fullFilePath = $destinationPath . "/original." . $extension;
+    if ($db->countQuery($sqlCheck) == "1") {                                   // Check if already exists in database
+      print "MySQL entry already exists, skipping MySQL entry...\n";           // Abort handling this entry
 
-$db = new DBCon();
-$db->connect();
-$sqlCheck = "SELECT COUNT(*) AS count FROM photos WHERE id = '$hash_id';";
-
-if ($db->countQuery($sqlCheck) == "1") {
-  print "MySQL entry already exists, aborting.\n";
-  return;
+    } else {
+      $sqlInsert = "INSERT INTO photos (id, createdDate, loc) VALUES ('$hash_id', CURDATE(), '4chan, Internet');";    
+      $check = $db->insert_query($sqlInsert);
+      print $check . "\n";
+    }
+    if (file_exists($fullFilePath)) {                                          // Check whether the file exists in the filesystem
+      print "File exists in filesystem, skipping...\n";                        // already, and skip moving if so.
+    } else{
+      move_uploaded_file($_FILES['images']['tmp_name'][$key], $fullFilePath);
+      generate_imgs($fullFilePath, $destinationPath, $extension);
+    }
+  }
 }
-
-$extTmp = explode(".", $_FILES["image"]["name"]);
-$extension = $extTmp[count($extTmp) - 1];
-$destinationPath = generate_path($curDate, $hash_id);
-$fullFilePath = $destinationPath . "/original." . $extension;
-
-
-if (file_exists($fullFilePath)) {
-  print "File exists, aborting!\n";
-  return;
-}
-move_uploaded_file($_FILES["image"]["tmp_name"], $fullFilePath);
-generate_imgs($fullFilePath, $destinationPath, $extension);
-$sqlInsert = "INSERT INTO photos (id, createdDate, loc) VALUES ('$hash_id', CURDATE(), '4chan, Internet');";
-
-// print "\n" . $sqlInsert . "\n";
-
-$check = $db->insert_query($sqlInsert);
-print $check . "\n";
 
 
 ?>

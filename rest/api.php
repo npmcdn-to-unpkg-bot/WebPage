@@ -50,6 +50,10 @@ switch($_POST['type']) {
         break;
     }
     break;
+  case 'upload':
+    break;
+  case 'createAlbum';
+    break;
   default:
     print json_encode(array('type' => array('error', 'undefined_type')));
     break;

@@ -4,7 +4,7 @@ curl \
 	-F "type=upload" \
 	-F "albums[]=Test album one" \
 	-F "albums[]=Test album two" \
-	-F "images[]=@7.jpg" \
+	-F "images[]=@7.png" \
 	-F "images[]=@1.jpg" \
 	-F "images[]=@2.jpg" \
 	-F "images[]=@5.jpg" \

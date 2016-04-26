@@ -16,7 +16,7 @@
 }
 
 .myInputLabel {
-    margin:auto;
+    width:40px;
 }
 
 .transition{
@@ -40,4 +40,11 @@
 .progressWrapper {
     margin:auto;
     width:70%;
+}
+progress[value]::-moz-progress-bar {
+    background: #0063a6;
+}
+
+progress[value^="100"]::-moz-progress-bar {
+  background-color:  #00cc66;
 }

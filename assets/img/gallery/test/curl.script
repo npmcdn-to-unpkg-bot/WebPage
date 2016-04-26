@@ -1,6 +1,7 @@
 curl \
 	-X POST \
 	-H 'Content-Type: multipart/form-data' \
-	-F "image=@20.jpg" \
+	-F "images[]=@20.jpg" \
+	-F "images[]=@19.jpg" \
         -F "desc=This is a test file!" \
 	http://localhost/\~simon/ang2/rest/upload.php

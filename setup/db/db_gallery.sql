@@ -15,6 +15,7 @@ CREATE TABLE albumList (
 CREATE TABLE albums (
        id INT NOT NULL PRIMARY KEY,
        albumName VARCHAR(64) NOT NULL,
+       thumbnail VARCHAR(64),
        tagList INT,
        descID INT,
        createdDate DATE NOT NULL,
@@ -29,6 +30,7 @@ CREATE TABLE photos (
        tagListID INT,
        createdDate DATE NOT NULL,
        loc VARCHAR(255) NOT NULL,
+       hasRaw BOOLEAN DEFAULT FALSE,
        CONSTRAINT `photos_desc_foreign_key`
 		  FOREIGN KEY (descID) REFERENCES descriptions (id)
 );

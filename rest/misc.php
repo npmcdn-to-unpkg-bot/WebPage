@@ -1,7 +1,7 @@
 <?php
 
-//define("PHOTOS_BASEDIR", "/srv/photos/");
-define("PHOTOS_BASEDIR", "../assets/photos/");
+define("PHOTOS_BASEDIR", "/srv/photos/");
+//define("PHOTOS_BASEDIR", "../assets/photos/");
 define("PHOTO_HIGH_W", 1920);
 define("PHOTO_HIGH_H", 1080);
 define("PHOTO_MED_W", 800);
@@ -39,7 +39,7 @@ function generate_copy($sourcePath, $destPath, $ext, $destHeight, $destWidth, $s
       $source = imagecreatefrompng($sourcePath);
       break;
     default:
-      print "Fuck you phph\n";
+      print "Unsupported file format!\n";
       break;
   }
   
@@ -58,13 +58,13 @@ function generate_copy($sourcePath, $destPath, $ext, $destHeight, $destWidth, $s
       $ret = imagepng($dest, $destPath);
       break;
     default:
-      print "Fuck you phph\n";
+      print "Unsupported file format!\n";
       break;
   }
   if (!$ret) {
-      print("An error occured\nYou picture was not uploaded.");
+      print("An error occured\nYour picture was not handled properly.");
   } else {
-      print("Picture upload was successfull for picture " . $destPath . "!\n");
+      print("Picture upload was successful for picture " . $destPath . "!\n");
   }
   imagedestroy($dest);
   imagedestroy($source);

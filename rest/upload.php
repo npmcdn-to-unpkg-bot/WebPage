@@ -9,6 +9,8 @@ function createInsertQuery($hash_id) {
 
 
   // INSERT INTO photos (id, createdDate, loc) VALUES ('$hash_id', CURDATE(), '4chan, Internet');
+  $resultQuery = "INSERT INTO photos (id, createdDate, loc) VALUES ('$hash_id', CURDATE(), '4chan, Internet');";
+  return $resultQuery;
 }
 
 function handleUploadedFiles() {

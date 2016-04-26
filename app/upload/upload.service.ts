@@ -21,16 +21,15 @@ export class UploadService {
 	var ourHeader = new Headers();
 	ourHeader.append("Content-Type", "application/x-www-form-urlencoded");
 
-	var args = [];
+	var args = new FormData();;
 	var a = "type=upload&images[]=";
 	var len = files.length;
 	for(var i = 0; i < len; i = i + 1) {
-	    args[i] = new FormData();
-	    args[i].append("images[]",files[i],files[i].name);
-	    console.log(args[i].get("images[]"));
+	    args.append("images[]",files[i]);
+	    console.log(args.get("images[]"));
 	}
 
-	return this._http.post(this.url, a + args[0], { header : ourHeader}).
+	return this._http.post(this.url, args, { header : ourHeader}).
 	    map((res: Response) => console.log("Respone: " + res))
 	    .subscribe(
 		data => console.log("got data: " + data),

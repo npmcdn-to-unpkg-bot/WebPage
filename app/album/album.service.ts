@@ -18,13 +18,11 @@ export class AlbumService {
     }
     
     getAlbums() {
-	//return this._albums;
 	console.log("Sending request to: " + this.url);
 
 	// let args = JSON.stringify({ type: 'album', req: 'all'});
 	let args = "type=album&req=all";
 	var ourHeader = new Headers();
-	var retVal;
 	ourHeader.append("Content-Type", "application/x-www-form-urlencoded");
 
 	return this._http.post(this.url, args, { headers: ourHeader })

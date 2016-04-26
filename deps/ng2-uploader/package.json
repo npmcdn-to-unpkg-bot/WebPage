@@ -1,0 +1,70 @@
+{
+  "name": "ng2-uploader",
+  "description": "Angular2 File Uploader",
+  "version": "0.5.1",
+  "license": "MIT",
+  "main": "./ng2-uploader.ts",
+  "author": {
+    "name": "Jan Kuri",
+    "email": "jkuri88@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkuri/ng2-uploader.git"
+  },
+  "scripts": {
+    "prepublish": "tsc && node make.js"
+  },
+  "keywords": [
+    "ng2",
+    "angular",
+    "angular2",
+    "file",
+    "upload",
+    "uploader"
+  ],
+  "dependencies": {
+    "angular2": "^2.0.0-beta.13",
+    "clang-format": "^1.0.35",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.20",
+    "zone.js": "^0.6.9"
+  },
+  "devDependencies": {
+    "systemjs-builder": "^0.15.14"
+  },
+  "gitHead": "509cbfea9b68e5de5b4906620dabae15cd3e4843",
+  "bugs": {
+    "url": "https://github.com/jkuri/ng2-uploader/issues"
+  },
+  "homepage": "https://github.com/jkuri/ng2-uploader#readme",
+  "_id": "ng2-uploader@0.5.1",
+  "_shasum": "edad4a06eb48e56dac03265a9e04ea71fad1f4cb",
+  "_from": "ng2-uploader@*",
+  "_npmVersion": "3.7.3",
+  "_nodeVersion": "5.8.0",
+  "_npmUser": {
+    "name": "jkuri",
+    "email": "jkuri88@gmail.com"
+  },
+  "dist": {
+    "shasum": "edad4a06eb48e56dac03265a9e04ea71fad1f4cb",
+    "tarball": "https://registry.npmjs.org/ng2-uploader/-/ng2-uploader-0.5.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "jkuri",
+      "email": "jkuri88@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/ng2-uploader-0.5.1.tgz_1459931206666_0.8415418905206025"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/ng2-uploader/-/ng2-uploader-0.5.1.tgz",
+  "readme": "ERROR: No README data found!"
+}

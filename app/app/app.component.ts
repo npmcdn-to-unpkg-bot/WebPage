@@ -11,11 +11,12 @@ import {GalleryService} from 'app/gallery/gallery.service';
 import {AlbumService} from 'app/album/album.service';
 import {AlbumComponent} from 'app/album/album.component';
 import {UploadComponent} from 'app/upload/upload.component';
+
 @Component({
     selector: 'flogsta-engine',
     templateUrl: 'app/app/app.html',
     styleUrls: ['app/app/app.css'],
-    directives: [SetupComponent, FeNavBarComponent, ROUTER_DIRECTIVES]
+    directives: [SetupComponent, FeNavBarComponent, ROUTER_DIRECTIVES,MATERIAL_DIRECTIVES]
 })
 
 @RouteConfig([

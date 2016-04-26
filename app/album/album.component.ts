@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {MATERIAL_DIRECTIVES} from "ng2-material/all";
 import {AlbumService} from './album.service';
-import {DOM} from "angular2/src/platform/dom/dom_adapter";
+//import {DOM} from "angular2/src/platform/dom/dom_adapter";
 
 @Component({
     selector: 'album',

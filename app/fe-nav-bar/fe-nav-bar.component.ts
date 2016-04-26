@@ -6,7 +6,7 @@ import {MATERIAL_DIRECTIVES} from "ng2-material/all";
     selector: 'fe-nav-bar',
     templateUrl: 'app/fe-nav-bar/fe-nav-bar.html'
     styleUrls: ['app/fe-nav-bar/fe-nav-bar.css','app/fe-nav-bar/dropdown.css'],
-    directives: [ROUTER_DIRECTIVES,MATERIAL_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES]
 })
 
 export class FeNavBarComponent {

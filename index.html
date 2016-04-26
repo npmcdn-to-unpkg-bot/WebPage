@@ -26,28 +26,34 @@
     <script src="deps/angular2/bundles/angular2.dev.js"></script>
 
     <script src="deps/angular2/bundles/http.dev.js"></script>
-    
     <script src="https://rawgit.com/shlomiassaf/angular2-modal/master/dist/systemjs/angular2-modal-0.0.5.js"></script>
+    <script src="deps/ng2-uploader/ng2-uploader.js"></script>
+
     <script>
       System.config({
       map: {
-         'ng2-material':'deps/ng2-material/source'
+      "ng2-material" : "deps/ng2-material/source",
+      "ng2-uploader" : "deps/ng2-uploader"
       },
-      transpiler: 'typescript', 
+      transpiler: "typescript", 
       typescriptOptions: { emitDecoratorMetadata: true }, 
       packages: {       
-         app: {
-           defaultExtension: 'ts'
-         },
-        'deps/ng2-material': {
-           defaultExtension: 'ts'
+         "app": {
+           defaultExtension: "ts"
+        },
+        "deps/ng2-material": {
+           defaultExtension: "ts"
+        },
+        "ng2-uploader": {
+           format: "register",
+           defaultExtension: "js"
         }
       },
       'ng2-material': {
-        defaultExtension: 'ts'
+        defaultExtension: "ts"
       }
       });
-      System.import('app/main')
+      System.import("app/main")
             .then(null, console.error.bind(console));
     </script>
 

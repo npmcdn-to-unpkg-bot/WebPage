@@ -1,8 +1,32 @@
-<br>
 <md-card style="width: 80%;margin:auto;">
+<div style="margin:auto;">
+  <label for="files-pb" class="ui small black button right icon upload-button">
+      <i class="ion-document-text icon"></i>
+      Choose files
+  </label>
+  <input type="file" 
+         id="files-pb"
+         style="display:none;"
+         [ng-file-select]="options"
+         (onUpload)="handleUpload($event)"
+         multiple>
+</div>
+
+<div class="ui divider"></div>
+
+<div *ngFor="#progressObj of uploadProgresses">
+  <div class="ui indicating olive progress">
+    <div class="bar" [style.width]="progressObj.percent + '%'"></div>
+    <div class="label">Uploading file ({{ progressObj.percent }}%)</div>
+  </div>
+</div>
+</md-card>
+<!--
+<md-card style="width: 80%;margin:auto;">
+  <br>
   <div style="margin:auto;">
     <input type="file" name="file" id="file" class="inputfile"  (change)="onChange($event)" multiple/>
-    <label md-button  for="file">Choose file/files</label>
+    <label for="file">Choose file/files</label>
     <button md-button (click)="upload()">Upload</button>
   </div>
 
@@ -16,5 +40,7 @@
     </li>
   </ul>
   <br>
-
 </md-card>
+
+
+-->
